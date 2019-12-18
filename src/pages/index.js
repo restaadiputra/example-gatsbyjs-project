@@ -1,10 +1,13 @@
 import React from 'react';
+
+// Components
 import Layout from '../components/Layout';
+import SimpleHero from '../components/SimpleHero';
 
 function Home() {
   return (
     <Layout>
-      <h1>This is homepage</h1>
+      <SimpleHero />
     </Layout>
   );
 }
