@@ -5,6 +5,7 @@ import { Link } from 'gatsby';
 import Layout from '../components/Layout';
 import SimpleHero from '../components/SimpleHero';
 import Banner from '../components/Banner';
+import About from '../components/Home/About';
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
           <Link to='/tours' className='btn-white'>explore tours</Link>
         </Banner>
       </SimpleHero>
+      <About />
     </Layout>
   );
 }
