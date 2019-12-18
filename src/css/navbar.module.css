@@ -1,3 +1,4 @@
+
 .nav-header {
   display: flex;
   justify-content: space-between;
@@ -16,6 +17,7 @@
   color: var(--primaryColor);
   font-size: 1.5rem;
 }
+
 .nav-links {
   list-style-type: none;
   transition: var(--mainTransition);
@@ -46,6 +48,7 @@
     padding: 0 2rem;
   }
 }
+
 @media screen and (min-width: 992px) {
   .logo-btn {
     display: none;
