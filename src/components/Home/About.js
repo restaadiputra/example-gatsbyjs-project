@@ -13,7 +13,8 @@ import styles from '../../css/about.module.css';
 
 const getAboutImage = graphql`
   query aboutImage {
-    aboutImage: file(relativePath: {eq: "defaultBcg.jpeg"}) {
+    # aboutImage: file(relativePath: {eq: "defaultBcg.jpeg"}) {
+    aboutImage: file(relativePath: {eq: "defaultBcg_2.jpg"}) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
