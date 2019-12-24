@@ -9,11 +9,11 @@ import './layout.css';
 
 function Layout({ children }) {
   return (
-    <React.Fragment>
+    <main>
       <Navbar />
       {children}
       <Footer />
-    </React.Fragment>
+    </main>
   );
 }
 

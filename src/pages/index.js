@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 // Components
 import Layout from '../components/Layout';
@@ -12,11 +13,13 @@ function Home({ data }) {
   return (
     <Layout>
       <StyledHero home img={data.defaultBcg.childImageSharp.fluid}>
-        <Banner 
-          title='continue exploring' 
-          info='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan luctus sagittis.'
+        <Banner
+          title="continue exploring"
+          info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan luctus sagittis."
         >
-          <Link to='/tours' className='btn-white'>explore tours</Link>
+          <AniLink fade to="/tours" className="btn-white">
+            explore tours
+          </AniLink>
         </Banner>
       </StyledHero>
       <About />
@@ -27,9 +30,9 @@ function Home({ data }) {
 
 export const query = graphql`
   query {
-    defaultBcg: file(relativePath: {eq: "defaultBcg_2.jpg"}) {
+    defaultBcg: file(relativePath: { eq: "defaultBcg.jpeg" }) {
       childImageSharp {
-        fluid {
+        fluid(quality: 90, maxWidth: 1920) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

@@ -1,12 +1,29 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import { graphql } from 'gatsby';
 
-function Blog() {
+// Components
+import Layout from '../components/Layout';
+import StyledHero from '../components/StyledHero';
+
+function Blog({ data }) {
   return (
     <Layout>
-      <h1>Blog page</h1>
+      <StyledHero img={data.blogBcg.childImageSharp.fluid}>
+      </StyledHero>
     </Layout>
   );
 }
+
+export const query = graphql`
+  query {
+    blogBcg: file(relativePath: { eq: "blogBcg.jpeg" }) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`;
 
 export default Blog;

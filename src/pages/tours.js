@@ -1,12 +1,29 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import { graphql } from 'gatsby';
 
-function Tours() {
+// Components
+import Layout from '../components/Layout';
+import StyledHero from '../components/StyledHero';
+
+function Tours({ data }) {
   return (
     <Layout>
-      <h1>Tours page</h1>
+      <StyledHero img={data.defaultBcg.childImageSharp.fluid}>
+      </StyledHero>
     </Layout>
   );
 }
+
+export const query = graphql`
+  query {
+    defaultBcg: file(relativePath: {eq: "defaultBcg.jpeg"}) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`;
 
 export default Tours;
